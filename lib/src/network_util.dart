@@ -31,7 +31,9 @@ class NetworkUtil {
       "avoidHighways": "$avoidHighways",
       "avoidFerries": "$avoidFerries",
       "avoidTolls": "$avoidTolls",
-      "key": googleApiKey
+      "key": googleApiKey,
+      /// Hardcoded by Andrey Sosnovyy
+      "polylineQuality": "HIGH_QUALITY",
     };
     if (wayPoints.isNotEmpty) {
       List wayPointsArray = [];
