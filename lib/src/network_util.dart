@@ -44,11 +44,11 @@ class NetworkUtil {
       }
       params.addAll({"waypoints": wayPointsString});
     }
-    Uri uri =
-        Uri.https("maps.googleapis.com", "maps/api/directions/json", params);
+    // Uri uri = Uri.https("maps.googleapis.com", "maps/api/directions/json", params);
+    Uri uri = Uri.https("routes.googleapis.com", "directions/v2:computeRoutes", params);
 
-    // print('GOOGLE MAPS URL: ' + url);
-    var response = await http.get(uri);
+    // var response = await http.get(uri);
+    var response = await http.post(uri);
     if (response.statusCode == 200) {
       var parsedJson = json.decode(response.body);
       result.status = parsedJson["status"];
